@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" width="240" height="120">
+  <rect width="240" height="120" fill="#FFFFFF"/>
+  <!-- TATA Blue Icon -->
+  <path d="M70 30 H170 V45 H128 V90 H112 V45 H70 Z" fill="#00529B"/>
+  <text x="120" y="110" font-family="'Arial', sans-serif" font-size="14" font-weight="bold" fill="#00529B" text-anchor="middle" letter-spacing="4">TATA MOTORS</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="90" fill="#003366" />
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#D4AF37" stroke-width="4" />
+  <circle cx="100" cy="100" r="68" fill="#FFFFFF" />
+  <!-- Flame & Cog graphic -->
+  <path d="M100 45 L115 80 L85 80 Z" fill="#D4AF37" />
+  <path d="M100 40 Q112 60 100 78 Q88 60 100 40 Z" fill="#C0392B" />
+  <!-- Cog wheel -->
+  <circle cx="100" cy="110" r="28" fill="none" stroke="#003366" stroke-width="8" stroke-dasharray="10,6" />
+  <circle cx="100" cy="110" r="14" fill="#003366" />
+  <!-- Text IIT KHARAGPUR -->
+  <text x="100" y="165" font-family="'Arial', sans-serif" font-size="14" font-weight="bold" fill="#003366" text-anchor="middle">IIT KHARAGPUR</text>
+</svg>

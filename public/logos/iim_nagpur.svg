@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="20" fill="#FFFFFF"/>
+  <path d="M40 50 H160 V70 H40 Z" fill="#8B0000"/>
+  <path d="M40 85 H100 V150 H40 Z" fill="#713411"/>
+  <path d="M110 85 H160 V150 H110 Z" fill="#A86B2D"/>
+  <text x="100" y="178" font-family="'Arial', sans-serif" font-size="16" font-weight="900" fill="#8B0000" text-anchor="middle" letter-spacing="2">IIM NAGPUR</text>
+</svg>

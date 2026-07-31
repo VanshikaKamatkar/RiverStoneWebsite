@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="300" height="120">
+  <rect width="300" height="120" fill="#FFFFFF"/>
+  <text x="150" y="55" font-family="'Georgia', 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#0A1128" text-anchor="middle" letter-spacing="1">Radisson</text>
+  <text x="150" y="90" font-family="'Arial', sans-serif" font-size="22" font-weight="bold" fill="#1C5D99" text-anchor="middle" letter-spacing="6">BLU</text>
+</svg>
