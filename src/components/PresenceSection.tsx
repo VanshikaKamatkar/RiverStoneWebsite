@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Globe, Sparkles, Compass, Building2 } from 'lucide-react';
+import FluidText from './FluidText';
+import FluidImage from './FluidImage';
 
 export default function PresenceSection() {
   const cities = [
@@ -18,9 +20,9 @@ export default function PresenceSection() {
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#A86B2D]/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
-        
+
         {/* Top Centered Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,7 +30,7 @@ export default function PresenceSection() {
           className="text-center space-y-3"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif]">
-            Distribution <span className="text-[#713411]">Presence</span>
+            <FluidText text="Distribution &nbsp;" /> <span className="text-[#713411]"><FluidText text="Presence" /></span>
           </h2>
           {/* Thick Gold Underline Accent */}
           <div className="w-16 h-1 bg-[#A86B2D] rounded-full mx-auto shadow-xs" />
@@ -36,9 +38,9 @@ export default function PresenceSection() {
 
         {/* Main 2-Column Grid (Left: Content & Cities | Right: Presence Map Image) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
-          
+
           {/* Left Column: Text Content & Active Cities Grid */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -53,8 +55,8 @@ export default function PresenceSection() {
 
             {/* Headline */}
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.18] font-['Metropolis','Montserrat',sans-serif]">
-              Growing Across Maharashtra. <br />
-              <span className="text-[#713411]">Expanding Beyond.</span>
+              <FluidText text="Growing Across Maharashtra." /> <br />
+              <span className="text-[#713411]"><FluidText text="Expanding Beyond." /></span>
             </h3>
 
             {/* Intro Body */}
@@ -72,11 +74,10 @@ export default function PresenceSection() {
                 {cities.map((city) => (
                   <div
                     key={city.name}
-                    className={`p-3.5 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
-                      city.isHQ
+                    className={`p-3.5 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${city.isHQ
                         ? 'bg-[#713411] text-white border-[#713411] shadow-md shadow-[#713411]/20 scale-105'
                         : 'bg-white text-[#111111] border-[#EAE6E2] hover:border-[#A86B2D]'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <MapPin className={`w-4 h-4 ${city.isHQ ? 'text-[#D9F4FF]' : 'text-[#A86B2D]'}`} />
@@ -119,7 +120,7 @@ export default function PresenceSection() {
           </motion.div>
 
           {/* Right Column: User Presence Map Image Display */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -144,10 +145,10 @@ export default function PresenceSection() {
 
               {/* Official Presence Map Image */}
               <div className="my-auto py-4 relative z-10 w-full flex items-center justify-center">
-                <img
+                <FluidImage
                   src="/presence_map.png"
                   alt="RiverStone Maharashtra Presence Map"
-                  className="w-full h-auto max-h-[380px] object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto max-h-[380px] drop-shadow-md group-hover:scale-105 transition-transform duration-500 block"
                 />
               </div>
 

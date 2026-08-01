@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
@@ -20,32 +21,89 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Products', href: '#products' },
-    { name: 'Presence', href: '#presence' },
-    { name: 'Clients', href: '#clients' },
-    { name: 'Articles', href: '#articles' },
-    { name: 'Reviews', href: '#reviews' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  const location = useLocation();
+
+  const navLinks = React.useMemo(() => [
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'Products', href: '/#products' },
+    { name: 'Presence', href: '/#presence' },
+    { name: 'Clients', href: '/#clients' },
+    { name: 'Articles', href: '/#articles' },
+    { name: 'Reviews', href: '/#reviews' },
+    { name: 'Contact', href: '/contact' },
+  ], []);
+
+  useEffect(() => {
+    // Only run scroll spy on the home page
+    if (location.pathname !== '/') return;
+
+    const sectionIds = ['home', 'about', 'products', 'presence', 'clients', 'articles', 'reviews'];
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let maxIntersectionRatio = 0;
+        let mostVisibleSection = '';
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > maxIntersectionRatio) {
+            maxIntersectionRatio = entry.intersectionRatio;
+            mostVisibleSection = entry.target.id;
+          }
+        });
+
+        if (mostVisibleSection) {
+          const matchingLink = navLinks.find((link) => link.href.includes(`#${mostVisibleSection}`));
+          if (matchingLink) {
+            setActiveLink(matchingLink.name);
+          }
+        }
+      },
+      {
+        rootMargin: '-10% 0px -50% 0px', 
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname, navLinks]);
+
+  useEffect(() => {
+    if (location.pathname === '/contact') {
+      setActiveLink('Contact');
+    } else {
+      if (location.hash) {
+        const matchingLink = navLinks.find(link => link.href === `/${location.hash}` || link.href === location.hash);
+        if (matchingLink) {
+          setActiveLink(matchingLink.name);
+        }
+      } else if (activeLink === 'Contact') {
+        setActiveLink('Home');
+      }
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'navbar-scrolled py-3' : 'navbar-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'navbar-scrolled py-3' : 'navbar-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         {/* Left: Website Logo */}
-        <a href="#home" className="flex items-center gap-2 group cursor-pointer">
+        <Link to="/#home" className="shrink-0 flex items-center">
           <img
             src="/logo.png"
             alt="RiverStone Logo"
-            className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-9 sm:h-11 md:h-12 w-auto object-contain block"
           />
-        </a>
+        </Link>
 
         {/* Center: Desktop Anchor Links */}
         <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
@@ -55,10 +113,20 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setActiveLink(link.name)}
-                className={`nav-link text-sm font-medium transition-colors ${
-                  isActive ? 'active' : ''
-                }`}
+                onClick={(e) => {
+                  if (link.href.startsWith('/#')) {
+                    if (location.pathname === '/') {
+                      e.preventDefault();
+                      const target = document.querySelector(link.href.substring(1));
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }
+                  setActiveLink(link.name);
+                }}
+                className={`nav-link text-sm font-medium transition-colors ${isActive ? 'active' : ''
+                  }`}
               >
                 {link.name}
               </a>
@@ -68,13 +136,13 @@ export default function Navbar() {
 
         {/* Right: CTA Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <a
-            href="#become-distributor"
+          <Link
+            to="/contact#become-distributor"
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold btn-distributor group"
           >
             <span>Become a Distributor</span>
             <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          </Link>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -102,26 +170,34 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => {
+                  onClick={(e) => {
+                    if (link.href.startsWith('/#')) {
+                      if (location.pathname === '/') {
+                        e.preventDefault();
+                        const target = document.querySelector(link.href.substring(1));
+                        if (target) {
+                          target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }
                     setActiveLink(link.name);
                     setMobileMenuOpen(false);
                   }}
-                  className={`text-base font-medium py-2 border-b border-[#EAE6E2]/50 transition-colors ${
-                    activeLink === link.name ? 'text-[#713411] font-semibold' : 'text-[#666666]'
-                  }`}
+                  className={`text-base font-medium py-2 border-b border-[#EAE6E2]/50 transition-colors ${activeLink === link.name ? 'text-[#713411] font-semibold' : 'text-[#666666]'
+                    }`}
                 >
                   {link.name}
                 </a>
               ))}
               <div className="pt-2">
-                <a
-                  href="#become-distributor"
+                <Link
+                  to="/contact#become-distributor"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold btn-distributor"
                 >
                   <span>Become a Distributor</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

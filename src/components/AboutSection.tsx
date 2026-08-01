@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, ShieldCheck, Award, Building2, CheckCircle2 } from 'lucide-react';
+import FluidText from './FluidText';
+import FluidImage from './FluidImage';
 
 export default function AboutSection() {
   return (
@@ -19,7 +21,7 @@ export default function AboutSection() {
           className="text-center space-y-3"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif] flex items-center justify-center gap-3 flex-wrap">
-            About <img src="/logo.png" alt="RiverStone®" className="h-10 sm:h-12 md:h-16 lg:h-18 w-auto inline-block align-baseline object-contain translate-y-1" />
+            <FluidText text="About" /> <FluidImage src="/logo.png" alt="RiverStone®" className="h-10 sm:h-12 md:h-16 lg:h-18 w-auto inline-block align-baseline object-contain translate-y-1" />
           </h2>
           {/* Thick Gold Underline Accent */}
           <div className="w-16 h-1 bg-[#A86B2D] rounded-full mx-auto shadow-xs" />
@@ -41,7 +43,7 @@ export default function AboutSection() {
 
               <div className="space-y-6 relative z-10">
                 <div className="space-y-2">
-                  <img src="/logo.png" alt="RiverStone Logo" className="h-10 w-auto object-contain" />
+                  <FluidImage src="/logo.png" alt="RiverStone Logo" className="h-10 w-auto object-contain block" />
                   <p className="text-xs font-bold uppercase tracking-wider text-[#A86B2D] flex items-center gap-1.5 pt-1">
                     <Building2 className="w-3.5 h-3.5" />
                     A Brand by Sindhu Beverages
@@ -101,8 +103,8 @@ export default function AboutSection() {
             className="lg:col-span-7 flex flex-col justify-center space-y-6 text-left"
           >
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.18] font-['Metropolis','Montserrat',sans-serif]">
-              Built in Nagpur. <br />
-              <span className="text-[#713411]">Built for Everywhere.</span>
+              <FluidText text="Built in Nagpur." /> <br />
+              <span className="text-[#713411]"><FluidText text="Built for Everywhere." /></span>
             </h3>
 
             <p className="text-base sm:text-lg font-medium text-[#111111] leading-relaxed">

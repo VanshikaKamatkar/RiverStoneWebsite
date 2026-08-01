@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { User, Quote, Calendar, Award, Building2 } from 'lucide-react';
+import FluidText from './FluidText';
 
 export default function FounderSection() {
   return (
@@ -9,9 +10,9 @@ export default function FounderSection() {
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#D9F4FF]/60 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
-        
+
         {/* Top Centered Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -19,7 +20,7 @@ export default function FounderSection() {
           className="text-center space-y-3"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif]">
-            About The <span className="text-[#713411]">Founder</span>
+            <FluidText text="About The &nbsp;" /> <span className="text-[#713411]"><FluidText text="Founder" /></span>
           </h2>
           {/* Thick Gold Underline Accent */}
           <div className="w-16 h-1 bg-[#A86B2D] rounded-full mx-auto shadow-xs" />
@@ -27,9 +28,9 @@ export default function FounderSection() {
 
         {/* Main 2-Column Grid (Left: Copy & Quote | Right: Founder Image Placeholder) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
-          
+
           {/* Left Column: Text & Quote Box */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -42,8 +43,8 @@ export default function FounderSection() {
             </div>
 
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.18] font-['Metropolis','Montserrat',sans-serif]">
-              Building More Than <br />
-              <span className="text-[#713411]">A Beverage Brand.</span>
+              <FluidText text="Building More Than" /> <br />
+              <span className="text-[#713411]"><FluidText text="A Beverage Brand." /></span>
             </h3>
 
             <p className="text-base sm:text-lg font-medium text-[#111111] leading-relaxed">
@@ -66,14 +67,14 @@ export default function FounderSection() {
                   <span>Founder's Philosophy</span>
                 </div>
                 <p className="text-base sm:text-lg font-bold text-[#111111] italic font-['Metropolis','Montserrat',sans-serif]">
-                  “Trust isn’t advertised. It’s proven in every drop.”
+                  <FluidText text="“Trust isn’t advertised." /> <FluidText text="It’s proven in every drop.”" />
                 </p>
               </div>
             </div>
           </motion.div>
 
           {/* Right Column: Founder's Image Placeholder */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

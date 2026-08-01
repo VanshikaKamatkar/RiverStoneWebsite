@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import FluidText from './FluidText';
 
 export default function ClientsSection() {
   const clients = [
@@ -58,21 +59,21 @@ export default function ClientsSection() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-3"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-[#A86B2D] font-['Metropolis','Montserrat',sans-serif]">
-            Our Credentials • Worked With
+          <span className="text-lg font-bold uppercase tracking-widest text-[#A86B2D] font-['Metropolis','Montserrat',sans-serif]">
+            <FluidText text="Our Credentials • Worked With" />
           </span>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif]">
-            Trusted By <span className="text-[#713411]">Leading Organizations.</span>
+            <FluidText text="Trusted By &nbsp;" /> <span className="text-[#713411]"><FluidText text="Leading Organizations." /></span>
           </h2>
 
           {/* Thick Gold Underline Accent */}
           <div className="w-16 h-1 bg-[#A86B2D] rounded-full mx-auto shadow-xs" />
 
           {/* Intro Description */}
-          <p className="max-w-3xl mx-auto text-sm sm:text-base text-[#555555] leading-relaxed pt-2">
+          {/* <p className="max-w-3xl mx-auto text-sm sm:text-base text-[#555555] leading-relaxed pt-2">
             We are proud to have supplied and collaborated with businesses, institutions, educational organizations, corporate partners, and events that demand reliability and quality. Our growing network of clients reflects the trust we have earned through consistent service and product excellence.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Continuous Flowing Infinite Marquee Container */}

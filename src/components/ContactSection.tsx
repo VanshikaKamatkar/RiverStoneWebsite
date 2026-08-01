@@ -1,9 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Send, ChevronLeft, ChevronRight, CheckCircle2, Building2, TrendingUp, ShieldCheck, Users, Award } from 'lucide-react';
+import FluidText from './FluidText';
+import FluidImage from './FluidImage';
 
 export default function ContactSection() {
   const [activeTab, setActiveTab] = useState<'collaboration' | 'distributor'>('collaboration');
+
+  useEffect(() => {
+    if (window.location.hash === '#become-distributor') {
+      setActiveTab('distributor');
+    }
+  }, []);
   const [collabEmail, setCollabEmail] = useState('');
   const [collabSubmitted, setCollabSubmitted] = useState(false);
 
@@ -60,7 +68,7 @@ export default function ContactSection() {
               <span>Partnerships & Inquiries</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif] flex items-center gap-3 flex-wrap">
-              Connect With <img src="/logo.png" alt="RiverStone®" className="h-10 sm:h-12 md:h-16 lg:h-18 w-auto inline-block align-baseline object-contain translate-y-1" />
+              <FluidText text="Connect With" /> <FluidImage src="/logo.png" alt="RiverStone®" className="h-10 sm:h-12 md:h-16 lg:h-18 w-auto inline-block align-baseline object-contain translate-y-1" />
             </h2>
           </div>
 
@@ -134,7 +142,7 @@ export default function ContactSection() {
                         Collaboration Section
                       </span>
                       <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
-                        Got An Idea? <span className="text-[#713411]">Let’s Talk.</span>
+                        <FluidText text="Got An Idea?" /> <span className="text-[#713411]"><FluidText text="Let’s Talk." /></span>
                       </h3>
                     </div>
 
@@ -234,7 +242,7 @@ export default function ContactSection() {
                         Become A Distributor
                       </span>
                       <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif] flex items-center gap-3 flex-wrap">
-                        Grow With <img src="/logo.png" alt="RiverStone®" className="h-9 sm:h-11 md:h-14 w-auto inline-block align-baseline object-contain translate-y-1" />
+                        <FluidText text="Grow With" /> <FluidImage src="/logo.png" alt="RiverStone®" className="h-9 sm:h-11 md:h-14 w-auto inline-block align-baseline object-contain translate-y-1" />
                       </h3>
                     </div>
 

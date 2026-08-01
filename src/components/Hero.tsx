@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Sparkles, ArrowRight, Building2, Mail, Phone, Globe, Share2 } from 'lucide-react';
+import FluidText from './FluidText';
 
 export default function Hero() {
   const [isVideoEnded, setIsVideoEnded] = useState(false);
@@ -85,12 +87,13 @@ export default function Hero() {
           {/* Main Title Stack */}
           <div className="space-y-1">
             <h2 className="text-xs sm:text-sm font-bold text-[#713411] uppercase tracking-wider">
-              Premium Packaged Hydration
+              <FluidText text="Premium Packaged Hydration" />
             </h2>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#111111] tracking-tight leading-[1.05] font-['Metropolis','Montserrat',sans-serif]">
               <img src="/RiverStone® Black.png" alt="RiverStone®" className="h-12 sm:h-16 lg:h-20 w-auto inline-block align-baseline mb-1 object-contain" /> <br />
-              <span className="text-[#713411]">Packaged Drinking</span> <br />
-              <span className="text-[#A86B2D]">Water</span>
+              <span className="text-[#713411]"><FluidText text="Packaged" /></span> <br />
+              <span className="text-[#713411]"><FluidText text="Drinking" /></span> <br />
+              <span className="text-[#A86B2D]"><FluidText text="Water" /></span>
             </h1>
           </div>
 
@@ -98,13 +101,13 @@ export default function Hero() {
           <div className="pt-6 hidden sm:flex items-center gap-4">
             <span className="text-xs font-semibold text-[#888888] uppercase tracking-widest">Connect</span>
             <div className="flex items-center gap-3">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="w-9 h-9 rounded-full bg-white border border-[#EAE6E2] flex items-center justify-center text-[#713411] hover:bg-[#713411] hover:text-white transition-all duration-300 shadow-xs"
                 title="Email Us"
               >
                 <Mail className="w-4 h-4" />
-              </a>
+              </Link>
               <a
                 href="tel:+916399753997"
                 className="w-9 h-9 rounded-full bg-white border border-[#EAE6E2] flex items-center justify-center text-[#713411] hover:bg-[#713411] hover:text-white transition-all duration-300 shadow-xs"
@@ -153,11 +156,11 @@ export default function Hero() {
           {/* Main Sub-headline */}
           <div className="space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#888888]">
-              Statement of Purpose
+              <FluidText text="Statement of Purpose" />
             </span>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.12] font-['Metropolis','Montserrat',sans-serif]">
-              Not All Water <br />
-              <span className="text-[#713411]">Is Made For Everyone.</span>
+              <FluidText text="Not All Water" /> <br />
+              <span className="text-[#713411]"><FluidText text="Is Made For Everyone." /></span>
             </h3>
           </div>
 
@@ -175,12 +178,12 @@ export default function Hero() {
               <span>Explore Products</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            <a
-              href="#become-distributor"
+            <Link
+              to="/contact#become-distributor"
               className="px-8 py-3.5 rounded-full font-semibold text-sm bg-white/90 backdrop-blur-md text-[#713411] border border-[#EAE6E2] hover:border-[#713411] hover:bg-[#FCFAF7] transition-all duration-300 shadow-xs flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Become a Distributor</span>
-            </a>
+            </Link>
           </div>
 
         </motion.div>

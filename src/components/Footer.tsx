@@ -1,4 +1,6 @@
 import { MapPin, Mail, Phone, Building2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import FluidImage from './FluidImage';
 
 export default function Footer() {
   return (
@@ -16,10 +18,10 @@ export default function Footer() {
           <div className="md:col-span-4 space-y-4 text-left">
             <div className="space-y-1.5">
               <div className="flex items-center">
-                <img
+                <FluidImage
                   src="/logo_white.png"
                   alt="RiverStone Logo"
-                  className="h-14 sm:h-16 lg:h-18 w-auto object-contain drop-shadow-md"
+                  className="h-14 sm:h-16 lg:h-18 w-auto object-contain drop-shadow-md block"
                 />
               </div>
               <p className="text-xs font-bold text-[#A86B2D] uppercase tracking-widest pt-0.5">

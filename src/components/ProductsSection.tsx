@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, CheckCircle2, Download, ExternalLink, Sparkles, Droplets } from 'lucide-react';
+import FluidText from './FluidText';
+import FluidImage from './FluidImage';
 
 export default function ProductsSection() {
   const [activeSlide, setActiveSlide] = useState(1); // 0: 200ml, 1: 500ml, 2: 1000ml
@@ -101,8 +103,8 @@ export default function ProductsSection() {
   };
 
   return (
-    <section 
-      id="products" 
+    <section
+      id="products"
       className="py-20 md:py-28 bg-[#F5F3F1] border-b border-[#EAE6E2] relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -111,7 +113,7 @@ export default function ProductsSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-[#D9F4FF]/70 via-[#FCFAF7] to-transparent blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-12 sm:space-y-16">
-        
+
         {/* Top Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#EAE6E2] pb-8">
           <div className="space-y-2 text-left">
@@ -120,7 +122,7 @@ export default function ProductsSection() {
               <span>Product Catalogue</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif]">
-              Hydration For <span className="text-[#713411]">Every Occasion.</span>
+              <FluidText text="Hydration For &nbsp;" /> <span className="text-[#713411]"><FluidText text="Every Occasion." /></span>
             </h2>
           </div>
 
@@ -133,11 +135,10 @@ export default function ProductsSection() {
                   setDirection(idx > activeSlide ? 1 : -1);
                   setActiveSlide(idx);
                 }}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                  activeSlide === idx
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeSlide === idx
                     ? 'bg-[#713411] text-white shadow-md shadow-[#713411]/20 scale-105'
                     : 'text-[#666666] hover:text-[#713411]'
-                }`}
+                  }`}
               >
                 {prod.volume}
               </button>
@@ -147,7 +148,7 @@ export default function ProductsSection() {
 
         {/* Interactive Single-Product Slider Workspace */}
         <div className="relative min-h-[480px] sm:min-h-[520px] flex items-center justify-center">
-          
+
           {/* Left Slider Arrow */}
           <button
             onClick={handlePrev}
@@ -179,7 +180,7 @@ export default function ProductsSection() {
               className="w-full max-w-5xl mx-auto px-6 sm:px-12 py-4"
             >
               <div className="bg-white rounded-[32px] border-2 border-[#EAE6E2] p-8 sm:p-12 shadow-xl shadow-[#713411]/5 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden">
-                
+
                 {/* Soft Water Crystal Corner Lighting */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#D9F4FF]/80 rounded-bl-full pointer-events-none -z-0" />
 
@@ -188,12 +189,13 @@ export default function ProductsSection() {
                   <div className="relative w-48 sm:w-56 h-72 sm:h-80 flex items-center justify-center">
                     {/* Aura Halo behind official bottle */}
                     <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#D9F4FF] via-[#A86B2D]/20 to-transparent blur-2xl animate-aura -z-10" />
-                    
-                    {/* Official Bottle Image */}
-                    <img
+
+                    {/* Official Bottle Image with Fluid Distortion */}
+                    <FluidImage
                       src="/riverstone_bottle_official.png"
                       alt={`${currentProduct.name} Official Bottle`}
-                      className={`w-full h-full object-contain drop-shadow-[0_15px_30px_rgba(113,52,17,0.2)] transition-transform duration-500 ${currentProduct.imageScale}`}
+                      className={`w-full h-full drop-shadow-[0_15px_30px_rgba(113,52,17,0.2)] transition-transform duration-500 ${currentProduct.imageScale}`}
+                      intensity={2.0}
                     />
                   </div>
 
@@ -273,9 +275,8 @@ export default function ProductsSection() {
                   setDirection(idx > activeSlide ? 1 : -1);
                   setActiveSlide(idx);
                 }}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeSlide === idx ? 'w-8 bg-[#713411]' : 'w-2.5 bg-[#EAE6E2] hover:bg-[#A86B2D]'
-                }`}
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeSlide === idx ? 'w-8 bg-[#713411]' : 'w-2.5 bg-[#EAE6E2] hover:bg-[#A86B2D]'
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
