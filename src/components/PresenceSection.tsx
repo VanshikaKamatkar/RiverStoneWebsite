@@ -59,7 +59,7 @@ export default function PresenceSection() {
 
             {/* Intro Body */}
             <p className="text-sm sm:text-base text-[#555555] leading-relaxed font-normal">
-              From our home in <span className="text-[#111111] font-semibold">Nagpur</span> to multiple cities and business locations, RiverStone® continues to build a strong distribution network that delivers quality hydration wherever it is needed.
+              From our home in <span className="text-[#111111] font-semibold">Nagpur</span> to multiple cities and business locations, <span className="font-semibold text-[#111111]">RiverStone®</span> continues to build a strong distribution network that delivers quality hydration wherever it is needed.
             </p>
 
             {/* Active Cities Pills Grid */}

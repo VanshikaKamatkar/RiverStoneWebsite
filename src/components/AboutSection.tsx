@@ -18,8 +18,8 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-3"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif]">
-            About <span className="text-[#713411]">RiverStone®</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif] flex items-center justify-center gap-3 flex-wrap">
+            About <img src="/logo.png" alt="RiverStone®" className="h-10 sm:h-12 md:h-16 lg:h-18 w-auto inline-block align-baseline object-contain translate-y-1" />
           </h2>
           {/* Thick Gold Underline Accent */}
           <div className="w-16 h-1 bg-[#A86B2D] rounded-full mx-auto shadow-xs" />

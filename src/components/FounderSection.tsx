@@ -47,7 +47,7 @@ export default function FounderSection() {
             </h3>
 
             <p className="text-base sm:text-lg font-medium text-[#111111] leading-relaxed">
-              RiverStone® was founded with a simple vision in <span className="text-[#713411] font-bold">2023</span>, to create a packaged drinking water brand that people could trust without hesitation.
+              <span className="font-bold text-[#713411]">RiverStone®</span> was founded with a simple vision in <span className="text-[#713411] font-bold">2023</span>, to create a packaged drinking water brand that people could trust without hesitation.
             </p>
 
             <p className="text-sm sm:text-base text-[#555555] leading-relaxed font-normal">

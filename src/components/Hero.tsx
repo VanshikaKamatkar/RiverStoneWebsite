@@ -21,19 +21,19 @@ export default function Hero() {
   }, [isVideoEnded]);
 
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-6 sm:px-8 max-w-7xl mx-auto w-full min-h-[85vh] flex flex-col justify-center overflow-hidden">
+    <section id="home" className="relative pt-28 pb-0 md:pt-36 max-w-7xl mx-auto w-full min-h-screen flex flex-col justify-center overflow-hidden">
       
       {/* Soft Ambient Background Lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-[#D9F4FF]/70 via-[#FCFAF7] to-[#A86B2D]/15 rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-tr from-[#D9F4FF]/70 via-[#FCFAF7] to-[#A86B2D]/15 rounded-full blur-3xl pointer-events-none z-0" />
 
-      {/* INTRO HERO VIDEO: First thing displayed alongside navbar with autoplay & no controls */}
+      {/* INTRO HERO VIDEO: True Fullscreen Edge-to-Edge */}
       <AnimatePresence>
         {!isVideoEnded && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
-            className="absolute inset-0 w-full h-full z-40 bg-[#18120F] flex items-center justify-center overflow-hidden"
+            className="fixed inset-0 w-screen h-screen z-40 bg-[#18120F] flex items-center justify-center overflow-hidden"
           >
             <video
               src="/Hero_video.mp4"
@@ -47,32 +47,32 @@ export default function Hero() {
         )}
       </AnimatePresence>
 
-      {/* BEAR MASCOT IMAGE: Appears first solo when video ends (Full opacity & prominence for 2.5s) */}
+      {/* BEAR MASCOT IMAGE: Bottom Flush with 40% Opacity (Height Reduced by 2%) */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.92 }}
-        animate={{ opacity: isVideoEnded ? 1 : 0, scale: isVideoEnded ? 1 : 0.92 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: isVideoEnded ? 0.4 : 0, scale: isVideoEnded ? 1 : 0.95 }}
         transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md sm:max-w-lg lg:max-w-xl flex items-center justify-center pointer-events-none z-0"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl sm:max-w-4xl lg:max-w-[1420px] flex items-end justify-center pointer-events-none z-0"
       >
         {/* Soft Glowing Background Aura directly behind solo bear */}
-        <div className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-tr from-[#D9F4FF] via-[#A86B2D]/20 to-[#713411]/15 blur-3xl animate-aura z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] rounded-full bg-gradient-to-tr from-[#D9F4FF] via-[#A86B2D]/20 to-[#713411]/15 blur-3xl animate-aura z-0" />
 
         <img
           src="/riverstone_bear_mascot.png"
-          alt="RiverStone Bear Mascot Background"
-          className="w-full h-auto max-h-[580px] sm:max-h-[650px] lg:max-h-[720px] object-contain drop-shadow-[0_20px_45px_rgba(113,52,17,0.18)]"
+          alt="RiverStone Bear Mascot"
+          className="w-full h-auto max-h-[93vh] sm:max-h-[100vh] lg:max-h-[104vh] object-contain object-bottom scale-113 sm:scale-118 lg:scale-123 drop-shadow-[0_25px_50px_rgba(113,52,17,0.16)]"
         />
       </motion.div>
 
-      {/* Main 3-Column Content Layout (Animates in after 2.5 seconds of solo bear image) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center relative z-10">
+      {/* Main 3-Column Content Layout (Left & Right text framed around the bear) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center relative z-10 pt-4 pb-12">
         
         {/* LEFT COLUMN: Sub-brand & Big Brand Title */}
         <motion.div 
           initial={{ opacity: 0, x: -35 }}
           animate={{ opacity: showHeroContent ? 1 : 0, x: showHeroContent ? 0 : -35 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-4 space-y-6 text-left"
+          className="lg:col-span-4 space-y-6 text-left bg-white/40 backdrop-blur-xs lg:bg-transparent lg:backdrop-blur-none p-4 lg:p-0 rounded-3xl"
         >
           {/* Sub-brand Credit */}
           <div className="space-y-1">
@@ -88,14 +88,14 @@ export default function Hero() {
               Premium Packaged Hydration
             </h2>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#111111] tracking-tight leading-[1.05] font-['Metropolis','Montserrat',sans-serif]">
-              RiverStone® <br />
+              <img src="/RiverStone® Black.png" alt="RiverStone®" className="h-12 sm:h-16 lg:h-20 w-auto inline-block align-baseline mb-1 object-contain" /> <br />
               <span className="text-[#713411]">Packaged Drinking</span> <br />
               <span className="text-[#A86B2D]">Water</span>
             </h1>
           </div>
 
           {/* Social / Contact Connect Bar */}
-          <div className="pt-8 hidden sm:flex items-center gap-4">
+          <div className="pt-6 hidden sm:flex items-center gap-4">
             <span className="text-xs font-semibold text-[#888888] uppercase tracking-widest">Connect</span>
             <div className="flex items-center gap-3">
               <a
@@ -138,7 +138,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 35 }}
           animate={{ opacity: showHeroContent ? 1 : 0, x: showHeroContent ? 0 : 35 }}
           transition={{ duration: 0.9, delay: showHeroContent ? 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-4 space-y-6 text-left"
+          className="lg:col-span-4 space-y-6 text-left bg-white/40 backdrop-blur-xs lg:bg-transparent lg:backdrop-blur-none p-4 lg:p-0 rounded-3xl"
         >
           {/* Screenshot Match Pill Badge */}
           <div>
@@ -163,7 +163,7 @@ export default function Hero() {
 
           {/* Body Copy */}
           <p className="text-sm sm:text-base text-[#555555] font-normal leading-relaxed">
-            RiverStone® combines purity, consistency, and reliability in every bottle, whether you’re at work, on the road, at an event, or chasing your next goal.
+            <span className="font-bold text-[#713411]">RiverStone®</span> combines purity, consistency, and reliability in every bottle, whether you’re at work, on the road, at an event, or chasing your next goal.
           </p>
 
           {/* CTA Buttons */}

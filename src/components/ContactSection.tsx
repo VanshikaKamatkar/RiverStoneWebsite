@@ -59,8 +59,8 @@ export default function ContactSection() {
               <Mail className="w-3.5 h-3.5" />
               <span>Partnerships & Inquiries</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif]">
-              Connect With <span className="text-[#713411]">RiverStone®</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight font-['Metropolis','Montserrat',sans-serif] flex items-center gap-3 flex-wrap">
+              Connect With <img src="/logo.png" alt="RiverStone®" className="h-10 sm:h-12 md:h-16 lg:h-18 w-auto inline-block align-baseline object-contain translate-y-1" />
             </h2>
           </div>
 
@@ -233,8 +233,8 @@ export default function ContactSection() {
                       <span className="text-xs font-bold uppercase tracking-widest text-[#A86B2D]">
                         Become A Distributor
                       </span>
-                      <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
-                        Grow With <span className="text-[#713411]">RiverStone®.</span>
+                      <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif] flex items-center gap-3 flex-wrap">
+                        Grow With <img src="/logo.png" alt="RiverStone®" className="h-9 sm:h-11 md:h-14 w-auto inline-block align-baseline object-contain translate-y-1" />
                       </h3>
                     </div>
 
