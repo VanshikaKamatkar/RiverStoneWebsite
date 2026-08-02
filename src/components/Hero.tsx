@@ -23,8 +23,8 @@ export default function Hero() {
   }, [isVideoEnded]);
 
   return (
-    <section id="home" className="relative pt-28 pb-0 md:pt-36 max-w-7xl mx-auto w-full min-h-screen flex flex-col justify-center overflow-hidden">
-      
+    <section id="home" className="relative pt-28 pb-0 md:pt-36 lg:max-w-7xl lg:mx-auto w-full min-h-[100svh] flex flex-col justify-center overflow-hidden">
+
       {/* Soft Ambient Background Lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-tr from-[#D9F4FF]/70 via-[#FCFAF7] to-[#A86B2D]/15 rounded-full blur-3xl pointer-events-none z-0" />
 
@@ -49,32 +49,48 @@ export default function Hero() {
         )}
       </AnimatePresence>
 
-      {/* BEAR MASCOT IMAGE: Bottom Flush with 40% Opacity (Height Reduced by 2%) */}
-      <motion.div 
+      {/* BEAR MASCOT IMAGE: Full-screen cover on mobile, bottom-flush on desktop */}
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: isVideoEnded ? 0.4 : 0, scale: isVideoEnded ? 1 : 0.95 }}
         transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl sm:max-w-4xl lg:max-w-[1420px] flex items-end justify-center pointer-events-none z-0"
+        className="absolute inset-0 lg:bottom-0 lg:top-auto lg:inset-x-auto w-full lg:left-1/2 lg:-translate-x-1/2 lg:max-w-[1420px] pointer-events-none z-0 overflow-hidden lg:overflow-visible"
       >
-        {/* Soft Glowing Background Aura directly behind solo bear */}
+        {/* Soft Glowing Aura */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[680px] rounded-full bg-gradient-to-tr from-[#D9F4FF] via-[#A86B2D]/20 to-[#713411]/15 blur-3xl animate-aura z-0" />
 
+        {/* Mobile: object-cover fills full screen, anchored to top-center of image (upper body) */}
         <img
           src="/riverstone_bear_mascot.png"
           alt="RiverStone Bear Mascot"
-          className="w-full h-auto max-h-[93vh] sm:max-h-[100vh] lg:max-h-[104vh] object-contain object-bottom scale-113 sm:scale-118 lg:scale-123 drop-shadow-[0_25px_50px_rgba(113,52,17,0.16)]"
+          className="relative z-10
+            block lg:hidden
+            w-full h-[100svh]
+            object-cover object-[center_15%]
+            drop-shadow-[0_25px_50px_rgba(113,52,17,0.16)]"
+        />
+        {/* Desktop: original contain + bottom flush */}
+        <img
+          src="/riverstone_bear_mascot.png"
+          alt="RiverStone Bear Mascot"
+          className="relative z-10
+            hidden lg:block
+            w-full h-auto max-h-[104vh]
+            object-contain object-bottom
+            scale-123
+            drop-shadow-[0_25px_50px_rgba(113,52,17,0.16)]"
         />
       </motion.div>
 
-      {/* Main 3-Column Content Layout (Left & Right text framed around the bear) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center relative z-10 pt-4 pb-12">
-        
+      {/* Main 3-Column Content Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-4 items-center relative z-10 pt-4 pb-0 lg:pb-12 flex-1">
+
         {/* LEFT COLUMN: Sub-brand & Big Brand Title */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -35 }}
           animate={{ opacity: showHeroContent ? 1 : 0, x: showHeroContent ? 0 : -35 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-4 space-y-6 text-left bg-white/40 backdrop-blur-xs lg:bg-transparent lg:backdrop-blur-none p-4 lg:p-0 rounded-3xl"
+          className="hidden lg:block lg:col-span-4 space-y-6 text-left lg:bg-transparent lg:backdrop-blur-none lg:p-0 rounded-3xl"
         >
           {/* Sub-brand Credit */}
           <div className="space-y-1">
@@ -137,11 +153,11 @@ export default function Hero() {
         <div className="lg:col-span-4 hidden lg:block pointer-events-none h-96" />
 
         {/* RIGHT COLUMN: Screenshot Pill Badge, Sub-headline, Body Copy & CTAs */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 35 }}
           animate={{ opacity: showHeroContent ? 1 : 0, x: showHeroContent ? 0 : 35 }}
           transition={{ duration: 0.9, delay: showHeroContent ? 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-4 space-y-6 text-left bg-white/40 backdrop-blur-xs lg:bg-transparent lg:backdrop-blur-none p-4 lg:p-0 rounded-3xl"
+          className="lg:col-span-4 flex flex-col justify-center space-y-6 text-left bg-white/40 backdrop-blur-xs lg:bg-transparent lg:backdrop-blur-none p-6 lg:p-0 rounded-none lg:rounded-3xl min-h-[100svh] lg:min-h-0 -mt-[128px] pt-[128px] lg:-mt-0 lg:pt-0"
         >
           {/* Screenshot Match Pill Badge */}
           <div>
@@ -156,7 +172,7 @@ export default function Hero() {
           {/* Main Sub-headline */}
           <div className="space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#888888]">
-              <FluidText text="Statement of Purpose" />
+              Premium Packaged Drinking Water
             </span>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.12] font-['Metropolis','Montserrat',sans-serif]">
               <FluidText text="Not All Water" /> <br />
@@ -170,17 +186,17 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+          <div className="flex flex-row items-stretch sm:items-center gap-2 sm:gap-4 pt-2">
             <a
               href="#products"
-              className="px-8 py-3.5 rounded-full font-semibold text-sm bg-[#713411] text-white hover:bg-[#A86B2D] transition-all duration-300 shadow-md shadow-[#713411]/20 hover:shadow-lg hover:shadow-[#A86B2D]/25 flex items-center justify-center gap-2 group cursor-pointer"
+              className="flex-1 px-2 sm:px-8 py-3.5 rounded-full font-semibold text-xs sm:text-sm bg-[#713411] text-white hover:bg-[#A86B2D] transition-all duration-300 shadow-md shadow-[#713411]/20 hover:shadow-lg hover:shadow-[#A86B2D]/25 flex items-center justify-center gap-1.5 sm:gap-2 group cursor-pointer text-center"
             >
               <span>Explore Products</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
             </a>
             <Link
               to="/contact#become-distributor"
-              className="px-8 py-3.5 rounded-full font-semibold text-sm bg-white/90 backdrop-blur-md text-[#713411] border border-[#EAE6E2] hover:border-[#713411] hover:bg-[#FCFAF7] transition-all duration-300 shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+              className="flex-1 px-2 sm:px-8 py-3.5 rounded-full font-semibold text-xs sm:text-sm bg-white/90 backdrop-blur-md text-[#713411] border border-[#EAE6E2] hover:border-[#713411] hover:bg-[#FCFAF7] transition-all duration-300 shadow-xs flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer text-center"
             >
               <span>Become a Distributor</span>
             </Link>
@@ -192,3 +208,4 @@ export default function Hero() {
     </section>
   );
 }
+

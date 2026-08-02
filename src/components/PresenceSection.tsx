@@ -45,7 +45,7 @@ export default function PresenceSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-7 flex flex-col justify-center space-y-6 text-left"
+            className="hidden lg:flex lg:col-span-7 flex-col justify-center space-y-6 text-left"
           >
             {/* Tag */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#A86B2D] shadow-xs w-fit">
@@ -125,7 +125,7 @@ export default function PresenceSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-5 flex"
+            className="lg:col-span-5 flex flex-col"
           >
             <div className="w-full bg-white rounded-[32px] border-2 border-[#EAE6E2] p-6 sm:p-8 shadow-xl shadow-[#713411]/5 flex flex-col justify-between items-center text-center relative overflow-hidden group hover:border-[#A86B2D]/40 transition-all duration-300 min-h-[420px] sm:min-h-[480px]">
               {/* Soft Water Crystal Corner Glow */}
@@ -133,13 +133,10 @@ export default function PresenceSection() {
               <div className="absolute bottom-0 left-0 w-36 h-36 bg-[#A86B2D]/5 rounded-tr-full pointer-events-none" />
 
               {/* Top Header */}
-              <div className="w-full flex items-center justify-between relative z-10 border-b border-[#EAE6E2] pb-4">
+              <div className="w-full flex items-center justify-center relative z-10 border-b border-[#EAE6E2] pb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#A86B2D] flex items-center gap-1.5">
                   <Compass className="w-3.5 h-3.5" />
-                  Maharashtra Coverage Map
-                </span>
-                <span className="text-[10px] font-semibold text-[#713411] bg-[#FCFAF7] px-2.5 py-1 rounded-full border border-[#EAE6E2]">
-                  Live Distribution
+                  Maharashtra and beyond
                 </span>
               </div>
 
@@ -161,6 +158,13 @@ export default function PresenceSection() {
                   </span>
                   <span className="text-[#A86B2D]">Expanding Network</span>
                 </div>
+              </div>
+            </div>
+            {/* Mobile-only Expansion Teaser Note below the map card */}
+            <div className="mt-6 flex lg:hidden justify-center w-full">
+              <div className="p-3.5 rounded-2xl bg-white border border-[#EAE6E2] inline-flex items-center gap-2.5 text-xs font-semibold text-[#713411] shadow-xs">
+                <Sparkles className="w-4 h-4 text-[#A86B2D] animate-spin" style={{ animationDuration: '6s' }} />
+                <span>And wait…. we are coming to your city too!</span>
               </div>
             </div>
           </motion.div>

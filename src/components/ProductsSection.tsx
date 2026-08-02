@@ -5,10 +5,17 @@ import FluidText from './FluidText';
 import FluidImage from './FluidImage';
 
 export default function ProductsSection() {
-  const [activeSlide, setActiveSlide] = useState(1); // 0: 200ml, 1: 500ml, 2: 1000ml
+  const [activeSlide, setActiveSlide] = useState(1);
   const [direction, setDirection] = useState(1);
-  const [isHovered, setIsHovered] = useState(false);
   const [catalogueModalOpen, setCatalogueModalOpen] = useState(false);
+  const [detailSheetOpen, setDetailSheetOpen] = useState(false);
+
+  // Lock body scroll whenever any overlay is open
+  useEffect(() => {
+    const isLocked = detailSheetOpen || catalogueModalOpen;
+    document.body.style.overflow = isLocked ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [detailSheetOpen, catalogueModalOpen]);
 
   const products = [
     {
@@ -61,25 +68,17 @@ export default function ProductsSection() {
     },
   ];
 
-  // Auto-play timer every 5 seconds unless hovered
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      setDirection(1);
-      setActiveSlide((prev) => (prev + 1) % products.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isHovered, products.length]);
 
   const handleNext = () => {
     setDirection(1);
     setActiveSlide((prev) => (prev + 1) % products.length);
+    setDetailSheetOpen(false);
   };
 
   const handlePrev = () => {
     setDirection(-1);
     setActiveSlide((prev) => (prev - 1 + products.length) % products.length);
+    setDetailSheetOpen(false);
   };
 
   const currentProduct = products[activeSlide];
@@ -106,8 +105,6 @@ export default function ProductsSection() {
     <section
       id="products"
       className="py-20 md:py-28 bg-[#F5F3F1] border-b border-[#EAE6E2] relative overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Ambient Soft Glow Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-[#D9F4FF]/70 via-[#FCFAF7] to-transparent blur-3xl -z-10 pointer-events-none" />
@@ -136,8 +133,8 @@ export default function ProductsSection() {
                   setActiveSlide(idx);
                 }}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeSlide === idx
-                    ? 'bg-[#713411] text-white shadow-md shadow-[#713411]/20 scale-105'
-                    : 'text-[#666666] hover:text-[#713411]'
+                  ? 'bg-[#713411] text-white shadow-md shadow-[#713411]/20 scale-105'
+                  : 'text-[#666666] hover:text-[#713411]'
                   }`}
               >
                 {prod.volume}
@@ -205,8 +202,8 @@ export default function ProductsSection() {
                   </div>
                 </div>
 
-                {/* Right Side: Product Details & Perfect For Grid */}
-                <div className="lg:col-span-7 space-y-6 text-left relative z-10">
+                {/* Right Side: Product Details */}
+                <div className="lg:col-span-7 space-y-4 text-left relative z-10">
                   <div className="space-y-2">
                     <span className="text-xs font-bold uppercase tracking-widest text-[#A86B2D]">
                       Variant Capacity • {currentProduct.volume}
@@ -219,38 +216,44 @@ export default function ProductsSection() {
                     </p>
                   </div>
 
-                  <p className="text-sm text-[#555555] leading-relaxed">
-                    {currentProduct.description}
-                  </p>
+                  {/* Mobile: View Details button — opens bottom sheet */}
+                  <button
+                    onClick={() => setDetailSheetOpen(true)}
+                    className="block lg:hidden w-full py-3 rounded-2xl border-2 border-[#713411] text-sm font-bold text-[#713411] hover:bg-[#713411] hover:text-white transition-all duration-300 cursor-pointer"
+                  >
+                    View Details →
+                  </button>
 
-                  {/* "Perfect For:" Checklist Grid */}
-                  <div className="space-y-3 pt-2 border-t border-[#EAE6E2]">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#888888]">
-                      Perfect For:
-                    </h4>
+                  {/* Desktop: always fully visible */}
+                  <div className="hidden lg:block space-y-6">
+                    <p className="text-sm text-[#555555] leading-relaxed">
+                      {currentProduct.description}
+                    </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                      {currentProduct.useCases.map((useCase) => (
-                        <div
-                          key={useCase}
-                          className="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#FCFAF7] border border-[#EAE6E2] shadow-xs text-xs font-semibold text-[#111111]"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-[#713411] shrink-0" />
-                          <span>{useCase}</span>
-                        </div>
-                      ))}
+                    <div className="space-y-3 pt-2 border-t border-[#EAE6E2]">
+                      <h4 className="text-xs font-bold uppercase tracking-widest text-[#888888]">Perfect For:</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {currentProduct.useCases.map((useCase) => (
+                          <div
+                            key={useCase}
+                            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#FCFAF7] border border-[#EAE6E2] shadow-xs text-xs font-semibold text-[#111111]"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-[#713411] shrink-0" />
+                            <span>{useCase}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Request Catalogue Action */}
-                  <div className="pt-4 flex items-center gap-4">
-                    <button
-                      onClick={() => setCatalogueModalOpen(true)}
-                      className="px-7 py-3.5 rounded-full font-semibold text-sm bg-[#713411] text-white hover:bg-[#A86B2D] transition-all duration-300 shadow-md shadow-[#713411]/20 hover:shadow-lg hover:shadow-[#A86B2D]/25 flex items-center gap-2 cursor-pointer"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Request Product Catalogue</span>
-                    </button>
+                    <div className="pt-4 flex items-center gap-4">
+                      <button
+                        onClick={() => setCatalogueModalOpen(true)}
+                        className="px-7 py-3.5 rounded-full font-semibold text-sm bg-[#713411] text-white hover:bg-[#A86B2D] transition-all duration-300 shadow-md shadow-[#713411]/20 hover:shadow-lg hover:shadow-[#A86B2D]/25 flex items-center gap-2 cursor-pointer"
+                      >
+                        <Download className="w-4 h-4" />
+                        <span>Request Product Catalogue</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -261,10 +264,6 @@ export default function ProductsSection() {
 
         {/* Bottom Controls & Auto-play Indicator */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#EAE6E2] text-xs text-[#888888]">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#713411] animate-ping" />
-            <span>Auto-rotates every 5 seconds (Hover to pause)</span>
-          </div>
 
           {/* Carousel Pagination Indicator Dots */}
           <div className="flex items-center gap-2">
@@ -293,6 +292,107 @@ export default function ProductsSection() {
         </div>
 
       </div>
+
+      {/* ── Mobile Product Detail Bottom Sheet ── */}
+      <AnimatePresence>
+        {detailSheetOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="sheet-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
+              onClick={() => setDetailSheetOpen(false)}
+            />
+            {/* Sheet */}
+            <motion.div
+              key="sheet-panel"
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 260 }}
+              className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white rounded-t-[32px] shadow-2xl overflow-y-auto max-h-[88svh]"
+            >
+              {/* Drag Handle */}
+              <div className="flex justify-center pt-3 pb-1">
+                <div className="w-10 h-1 rounded-full bg-[#EAE6E2]" />
+              </div>
+
+              {/* Sheet Header: thumbnail + name + close */}
+              <div className="flex items-start gap-4 px-6 pt-4 pb-5 border-b border-[#EAE6E2]">
+                <img
+                  src="/riverstone_bottle_official.png"
+                  alt={currentProduct.name}
+                  className="w-16 h-24 object-contain shrink-0 drop-shadow-md"
+                />
+                <div className="flex-1 min-w-0">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#A86B2D] block mb-1">
+                    {currentProduct.badge}
+                  </span>
+                  <h3 className="text-xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif] leading-tight">
+                    {currentProduct.name}
+                  </h3>
+                  <p className="text-sm font-bold text-[#713411] italic mt-1">
+                    "{currentProduct.tagline}"
+                  </p>
+                  <span className="text-xs text-[#888888] font-semibold mt-1 block">
+                    Variant Capacity • {currentProduct.volume}
+                  </span>
+                </div>
+                {/* Close button */}
+                <button
+                  onClick={() => setDetailSheetOpen(false)}
+                  className="shrink-0 w-8 h-8 rounded-full bg-[#F5F3F1] flex items-center justify-center text-[#666666] hover:bg-[#713411] hover:text-white transition-all cursor-pointer text-lg font-bold leading-none"
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+              </div>
+
+              {/* Sheet Body */}
+              <div className="px-6 py-6 space-y-6">
+                <p className="text-sm text-[#555555] leading-relaxed">
+                  {currentProduct.description}
+                </p>
+
+                <div className="space-y-3 border-t border-[#EAE6E2] pt-5">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-[#888888]">Perfect For:</h4>
+                  <div className="grid grid-cols-1 gap-2.5">
+                    {currentProduct.useCases.map((useCase) => (
+                      <div
+                        key={useCase}
+                        className="flex items-center gap-3 p-3 rounded-xl bg-[#FCFAF7] border border-[#EAE6E2] text-xs font-semibold text-[#111111]"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-[#713411] shrink-0" />
+                        <span>{useCase}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-2 pb-4 flex flex-col gap-3">
+                  <button
+                    onClick={() => { setDetailSheetOpen(false); setCatalogueModalOpen(true); }}
+                    className="w-full py-4 rounded-2xl font-semibold text-sm bg-[#713411] text-white hover:bg-[#A86B2D] transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <Download className="w-4 h-4" />
+                    Request Product Catalogue
+                  </button>
+                  <button
+                    onClick={() => setDetailSheetOpen(false)}
+                    className="w-full py-3.5 rounded-2xl font-semibold text-sm bg-[#F5F3F1] text-[#666666] border border-[#EAE6E2] transition-all duration-300 cursor-pointer"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Request Product Catalogue Modal */}
       <AnimatePresence>

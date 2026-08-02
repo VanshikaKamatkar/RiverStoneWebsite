@@ -1,19 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import "@fontsource/metropolis/400.css";
+@import "@fontsource/metropolis/500.css";
+@import "@fontsource/metropolis/600.css";
+@import "@fontsource/metropolis/700.css";
+@import "@fontsource/metropolis/800.css";
 @import "tailwindcss";
 
 @theme {
   --color-brand-brown: #713411;
   --color-brand-gold: #A86B2D;
-  
+
   --color-background-white: #FFFFFF;
   --color-background-ivory: #FCFAF7;
   --color-background-stone: #F5F3F1;
-  
+
   --color-water-crystal: #D9F4FF;
-  
+
   --color-text-primary: #111111;
   --color-text-secondary: #666666;
   --color-text-caption: #888888;
-  
+
   --color-border-subtle: #EAE6E2;
 
   --font-metropolis: 'Metropolis', 'Montserrat', 'Inter', system-ui, sans-serif;
@@ -46,38 +52,7 @@
   }
 }
 
-/* Custom Metropolis Font */
-@font-face {
-  font-family: 'Metropolis';
-  src: url('https://cdn.jsdelivr.net/gh/chriskanyane/Metropolis-Font@main/Metropolis-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Metropolis';
-  src: url('https://cdn.jsdelivr.net/gh/chriskanyane/Metropolis-Font@main/Metropolis-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Metropolis';
-  src: url('https://cdn.jsdelivr.net/gh/chriskanyane/Metropolis-Font@main/Metropolis-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Metropolis';
-  src: url('https://cdn.jsdelivr.net/gh/chriskanyane/Metropolis-Font@main/Metropolis-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Cleaned up broken CDN links — loaded securely via @fontsource/metropolis */
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -162,8 +137,13 @@
 
 /* Continuous Infinite Marquee Animation (Left to Right / Flowing) */
 @keyframes marquee-flow {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .animate-marquee-flow {
@@ -178,10 +158,13 @@
 
 /* Glowing Radial Halo Animation behind Center Character */
 @keyframes aura-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.75;
   }
+
   50% {
     transform: scale(1.08);
     opacity: 0.95;
@@ -194,8 +177,15 @@
 
 /* Floating animation */
 @keyframes float-subtle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .animate-float-subtle {
