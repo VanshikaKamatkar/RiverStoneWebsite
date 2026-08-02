@@ -37,7 +37,7 @@ export default function FounderSection() {
             transition={{ duration: 0.7 }}
             className="lg:col-span-7 flex flex-col justify-center space-y-6 text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#A86B2D] shadow-xs w-fit">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#8C5925] shadow-xs w-fit">
               <Calendar className="w-3.5 h-3.5" />
               <span>Est. 2023 • Sindhu Beverages</span>
             </div>
@@ -63,7 +63,7 @@ export default function FounderSection() {
             <div className="pt-2">
               <div className="border-l-4 border-[#A86B2D] bg-[#F5F3F1] p-5 sm:p-6 rounded-r-2xl border-y border-r border-[#EAE6E2] space-y-2 shadow-xs relative">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#713411]">
-                  <Quote className="w-4 h-4 text-[#A86B2D]" />
+                  <Quote className="w-4 h-4 text-[#8C5925]" />
                   <span>Founder's Philosophy</span>
                 </div>
                 <p className="text-base sm:text-lg font-bold text-[#111111] italic font-['Metropolis','Montserrat',sans-serif]">
@@ -86,7 +86,7 @@ export default function FounderSection() {
               <div className="absolute bottom-0 left-0 w-36 h-36 bg-[#A86B2D]/5 rounded-tr-full pointer-events-none" />
 
               <div className="w-full flex items-center justify-between relative z-10 border-b border-[#EAE6E2] pb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#A86B2D] flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#8C5925] flex items-center gap-1.5">
                   <Building2 className="w-3.5 h-3.5" />
                   Leadership Portrait
                 </span>
@@ -97,13 +97,13 @@ export default function FounderSection() {
 
               <div className="my-auto py-8 relative z-10 flex flex-col items-center space-y-4">
                 <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-[#FCFAF7] border-2 border-dashed border-[#A86B2D]/40 flex items-center justify-center text-[#713411] shadow-inner group-hover:scale-105 transition-transform duration-300">
-                  <User className="w-16 h-16 text-[#A86B2D]/60" />
+                  <User className="w-16 h-16 text-[#8C5925]/60" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-base font-bold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
+                  <h3 className="text-base font-bold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
                     Founder & Managing Director
-                  </h4>
-                  <p className="text-xs text-[#888888]">
+                  </h3>
+                  <p className="text-xs text-[#666666]">
                     Sindhu Beverages • RiverStone®
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export default function FounderSection() {
               <div className="w-full pt-4 relative z-10 border-t border-[#EAE6E2]">
                 <div className="p-3.5 rounded-2xl bg-[#FCFAF7] border border-[#EAE6E2] flex items-center justify-between text-xs text-[#713411] font-semibold">
                   <span>Founder Image Placeholder</span>
-                  <Award className="w-4 h-4 text-[#A86B2D]" />
+                  <Award className="w-4 h-4 text-[#8C5925]" />
                 </div>
               </div>
             </div>

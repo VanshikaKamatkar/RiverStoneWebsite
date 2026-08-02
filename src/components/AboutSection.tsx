@@ -44,7 +44,7 @@ export default function AboutSection() {
               <div className="space-y-6 relative z-10">
                 <div className="space-y-2">
                   <FluidImage src="/logo.png" alt="RiverStone Logo" className="h-10 w-auto object-contain block" />
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#A86B2D] flex items-center gap-1.5 pt-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#8C5925] flex items-center gap-1.5 pt-1">
                     <Building2 className="w-3.5 h-3.5" />
                     A Brand by Sindhu Beverages
                   </p>
@@ -53,9 +53,9 @@ export default function AboutSection() {
                 <div className="h-px bg-[#EAE6E2]" />
 
                 <div className="space-y-4">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-[#888888]">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#666666]">
                     Brand Overview
-                  </h4>
+                  </h3>
 
                   <div className="space-y-3">
                     <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FCFAF7] border border-[#EAE6E2]">
@@ -75,7 +75,7 @@ export default function AboutSection() {
                     </div>
 
                     <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FCFAF7] border border-[#EAE6E2]">
-                      <Award className="w-5 h-5 text-[#A86B2D] shrink-0 mt-0.5" />
+                      <Award className="w-5 h-5 text-[#8C5925] shrink-0 mt-0.5" />
                       <div>
                         <h5 className="text-sm font-bold text-[#111111]">Trusted Choice</h5>
                         <p className="text-xs text-[#666666]">Institutions, Events & Homes</p>
@@ -88,7 +88,7 @@ export default function AboutSection() {
               <div className="pt-6 relative z-10">
                 <div className="p-3.5 rounded-2xl bg-[#FCFAF7] border border-[#EAE6E2] flex items-center justify-between text-xs text-[#713411] font-semibold">
                   <span>Certified Packaged Water</span>
-                  <CheckCircle2 className="w-4 h-4 text-[#A86B2D]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#8C5925]" />
                 </div>
               </div>
             </div>

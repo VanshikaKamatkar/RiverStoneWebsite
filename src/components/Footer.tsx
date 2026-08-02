@@ -24,7 +24,7 @@ export default function Footer() {
                   className="h-14 sm:h-16 lg:h-18 w-auto object-contain drop-shadow-md block"
                 />
               </div>
-              <p className="text-xs font-bold text-[#A86B2D] uppercase tracking-widest pt-0.5">
+              <p className="text-xs font-bold text-[#8C5925] uppercase tracking-widest pt-0.5">
                 A Brand By Sindhu Beverages
               </p>
             </div>
@@ -84,45 +84,45 @@ export default function Footer() {
           {/* CENTER COLUMN: Quick Links */}
           <div className="md:col-span-4 space-y-4 text-left">
             <div className="space-y-1">
-              <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider font-['Metropolis','Montserrat',sans-serif]">
+              <h3 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider font-['Metropolis','Montserrat',sans-serif]">
                 Quick Links
-              </h4>
+              </h3>
               <div className="w-10 h-0.5 bg-[#A86B2D] rounded-full" />
             </div>
 
             <ul className="grid grid-cols-2 gap-y-3 text-xs sm:text-sm text-gray-200 font-semibold">
               <li>
-                <a href="#home" className="hover:text-[#A86B2D] transition-colors flex items-center gap-2">
+                <a href="#home" className="hover:text-[#8C5925] transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#A86B2D]" />
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#A86B2D] transition-colors flex items-center gap-2">
+                <a href="#about" className="hover:text-[#8C5925] transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#A86B2D]" />
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#products" className="hover:text-[#A86B2D] transition-colors flex items-center gap-2">
+                <a href="#products" className="hover:text-[#8C5925] transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#A86B2D]" />
                   Products
                 </a>
               </li>
               <li>
-                <a href="#presence" className="hover:text-[#A86B2D] transition-colors flex items-center gap-2">
+                <a href="#presence" className="hover:text-[#8C5925] transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#A86B2D]" />
                   Presence
                 </a>
               </li>
               <li>
-                <a href="#become-distributor" className="hover:text-[#A86B2D] transition-colors flex items-center gap-2">
+                <a href="#become-distributor" className="hover:text-[#8C5925] transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#A86B2D]" />
                   Distributorship
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#A86B2D] transition-colors flex items-center gap-2">
+                <a href="#contact" className="hover:text-[#8C5925] transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#A86B2D]" />
                   Contact Us
                 </a>
@@ -133,15 +133,15 @@ export default function Footer() {
           {/* RIGHT COLUMN: Get In Touch & Contact Details */}
           <div className="md:col-span-4 space-y-4 text-left">
             <div className="space-y-1">
-              <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider font-['Metropolis','Montserrat',sans-serif]">
+              <h3 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider font-['Metropolis','Montserrat',sans-serif]">
                 Get In Touch
-              </h4>
+              </h3>
               <div className="w-10 h-0.5 bg-[#A86B2D] rounded-full" />
             </div>
 
             <div className="space-y-3 text-xs sm:text-sm text-gray-200 font-medium">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#A86B2D] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#8C5925] shrink-0 mt-0.5">
                   <Building2 className="w-4 h-4" />
                 </div>
                 <div>
@@ -151,7 +151,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#A86B2D] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#8C5925] shrink-0 mt-0.5">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
@@ -160,19 +160,19 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#A86B2D] shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#8C5925] shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <a href="mailto:info@riverstonehydration.com" className="text-xs sm:text-sm text-gray-200 hover:text-[#A86B2D] transition-colors">
+                <a href="mailto:info@riverstonehydration.com" className="text-xs sm:text-sm text-gray-200 hover:text-[#8C5925] transition-colors">
                   info@riverstonehydration.com
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#A86B2D] shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#A86B2D]/20 border border-[#A86B2D]/30 flex items-center justify-center text-[#8C5925] shrink-0">
                   <Phone className="w-4 h-4" />
                 </div>
-                <a href="tel:+916399753997" className="text-xs sm:text-sm font-bold text-white hover:text-[#A86B2D] transition-colors">
+                <a href="tel:+916399753997" className="text-xs sm:text-sm font-bold text-white hover:text-[#8C5925] transition-colors">
                   +91 63997 53997
                 </a>
               </div>
@@ -183,7 +183,7 @@ export default function Footer() {
 
         {/* BOTTOM BAR: Footer Tagline & Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-300 pt-1">
-          <p className="text-xs sm:text-sm font-bold text-[#A86B2D] italic font-['Metropolis','Montserrat',sans-serif]">
+          <p className="text-xs sm:text-sm font-bold text-[#8C5925] italic font-['Metropolis','Montserrat',sans-serif]">
             "Bold In Spirit. Pure In Every Drop."
           </p>
 

@@ -114,7 +114,7 @@ export default function ProductsSection() {
         {/* Top Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#EAE6E2] pb-8">
           <div className="space-y-2 text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#A86B2D] shadow-xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#8C5925] shadow-xs">
               <Droplets className="w-3.5 h-3.5" />
               <span>Product Catalogue</span>
             </div>
@@ -197,7 +197,7 @@ export default function ProductsSection() {
                   </div>
 
                   <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FCFAF7] border border-[#EAE6E2] text-xs font-bold text-[#713411] shadow-xs">
-                    <Sparkles className="w-3.5 h-3.5 text-[#A86B2D]" />
+                    <Sparkles className="w-3.5 h-3.5 text-[#8C5925]" />
                     <span>{currentProduct.badge}</span>
                   </div>
                 </div>
@@ -205,7 +205,7 @@ export default function ProductsSection() {
                 {/* Right Side: Product Details */}
                 <div className="lg:col-span-7 space-y-4 text-left relative z-10">
                   <div className="space-y-2">
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#A86B2D]">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#8C5925]">
                       Variant Capacity • {currentProduct.volume}
                     </span>
                     <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
@@ -231,7 +231,7 @@ export default function ProductsSection() {
                     </p>
 
                     <div className="space-y-3 pt-2 border-t border-[#EAE6E2]">
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-[#888888]">Perfect For:</h4>
+                      <h3 className="text-xs font-bold uppercase tracking-widest text-[#666666]">Perfect For:</h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {currentProduct.useCases.map((useCase) => (
                           <div
@@ -263,7 +263,7 @@ export default function ProductsSection() {
         </div>
 
         {/* Bottom Controls & Auto-play Indicator */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#EAE6E2] text-xs text-[#888888]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#EAE6E2] text-xs text-[#666666]">
 
           {/* Carousel Pagination Indicator Dots */}
           <div className="flex items-center gap-2">
@@ -284,7 +284,7 @@ export default function ProductsSection() {
           {/* Direct Catalogue Button */}
           <button
             onClick={() => setCatalogueModalOpen(true)}
-            className="text-[#713411] font-semibold hover:text-[#A86B2D] flex items-center gap-1.5 transition-colors cursor-pointer"
+            className="text-[#713411] font-semibold hover:text-[#8C5925] flex items-center gap-1.5 transition-colors cursor-pointer"
           >
             <span>Download Full Catalogue (PDF / Drive)</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -329,7 +329,7 @@ export default function ProductsSection() {
                   className="w-16 h-24 object-contain shrink-0 drop-shadow-md"
                 />
                 <div className="flex-1 min-w-0">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#A86B2D] block mb-1">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C5925] block mb-1">
                     {currentProduct.badge}
                   </span>
                   <h3 className="text-xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif] leading-tight">
@@ -338,7 +338,7 @@ export default function ProductsSection() {
                   <p className="text-sm font-bold text-[#713411] italic mt-1">
                     "{currentProduct.tagline}"
                   </p>
-                  <span className="text-xs text-[#888888] font-semibold mt-1 block">
+                  <span className="text-xs text-[#666666] font-semibold mt-1 block">
                     Variant Capacity • {currentProduct.volume}
                   </span>
                 </div>
@@ -359,7 +359,7 @@ export default function ProductsSection() {
                 </p>
 
                 <div className="space-y-3 border-t border-[#EAE6E2] pt-5">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-[#888888]">Perfect For:</h4>
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#666666]">Perfect For:</h3>
                   <div className="grid grid-cols-1 gap-2.5">
                     {currentProduct.useCases.map((useCase) => (
                       <div
@@ -411,7 +411,7 @@ export default function ProductsSection() {
             >
               <div className="space-y-2">
                 <div className="w-10 h-10 rounded-2xl bg-[#FCFAF7] border border-[#EAE6E2] flex items-center justify-center text-[#713411]">
-                  <Download className="w-5 h-5 text-[#A86B2D]" />
+                  <Download className="w-5 h-5 text-[#8C5925]" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
                   Request Product Catalogue

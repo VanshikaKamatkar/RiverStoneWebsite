@@ -59,7 +59,7 @@ export default function ClientsSection() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-3"
         >
-          <span className="text-lg font-bold uppercase tracking-widest text-[#A86B2D] font-['Metropolis','Montserrat',sans-serif]">
+          <span className="text-lg font-bold uppercase tracking-widest text-[#8C5925] font-['Metropolis','Montserrat',sans-serif]">
             <FluidText text="Our Credentials • Worked With" />
           </span>
 

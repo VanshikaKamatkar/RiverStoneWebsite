@@ -63,7 +63,7 @@ export default function ContactSection() {
         {/* Top Section Header with Direct Switcher Tabs */}
         <div id="become-distributor" className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#EAE6E2] pb-8">
           <div className="space-y-2 text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#A86B2D] shadow-xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#8C5925] shadow-xs">
               <Mail className="w-3.5 h-3.5" />
               <span>Partnerships & Inquiries</span>
             </div>
@@ -138,7 +138,7 @@ export default function ContactSection() {
                   {/* Left Column: Collaboration Info & Email Form */}
                   <div className="lg:col-span-7 space-y-6 relative z-10">
                     <div className="space-y-2">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#A86B2D]">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#8C5925]">
                         Collaboration Section
                       </span>
                       <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
@@ -154,7 +154,7 @@ export default function ContactSection() {
                       <p className="text-xs font-bold text-[#713411] uppercase tracking-wider">
                         Drop your email and our team will get in touch.
                       </p>
-                      <p className="text-xs text-[#888888]">
+                      <p className="text-xs text-[#666666]">
                         We guarantee a response within 24 business hours.
                       </p>
                     </div>
@@ -162,7 +162,7 @@ export default function ContactSection() {
                     {/* Email Input Form */}
                     {collabSubmitted ? (
                       <div className="p-4 rounded-2xl bg-[#D9F4FF]/50 border border-[#A86B2D]/30 text-xs font-semibold text-[#713411] flex items-center gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-[#A86B2D] shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-[#8C5925] shrink-0" />
                         <span>Thank you! Your email has been received. Our team will reach out shortly.</span>
                       </div>
                     ) : (
@@ -189,12 +189,12 @@ export default function ContactSection() {
                   {/* Right Column: Perks & Support Card */}
                   <div className="lg:col-span-5 flex flex-col justify-between space-y-4 bg-[#FCFAF7] p-6 rounded-2xl border border-[#EAE6E2] relative z-10">
                     <div className="space-y-3">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#A86B2D]">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#8C5925]">
                         Ways To Partner
                       </span>
-                      <h4 className="text-base font-bold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
+                      <h3 className="text-base font-bold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
                         Custom Supply & Event Hydration
-                      </h4>
+                      </h3>
                     </div>
 
                     <div className="space-y-2.5 text-xs text-[#555555]">
@@ -212,7 +212,7 @@ export default function ContactSection() {
                       </div>
                     </div>
 
-                    <div className="pt-3 border-t border-[#EAE6E2] text-xs text-[#888888] flex items-center justify-between">
+                    <div className="pt-3 border-t border-[#EAE6E2] text-xs text-[#666666] flex items-center justify-between">
                       <span>Sindhu Beverages HQ</span>
                       <span className="font-bold text-[#713411]">Nagpur, MH</span>
                     </div>
@@ -238,7 +238,7 @@ export default function ContactSection() {
                   {/* Left Column: Distributor Copy & Benefits List */}
                   <div className="lg:col-span-7 space-y-6 relative z-10">
                     <div className="space-y-2">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#A86B2D]">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#8C5925]">
                         Become A Distributor
                       </span>
                       <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif] flex items-center gap-3 flex-wrap">
@@ -252,9 +252,9 @@ export default function ContactSection() {
 
                     {/* Benefits Grid */}
                     <div className="space-y-3 border-t border-[#EAE6E2] pt-4">
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-[#888888]">
+                      <h3 className="text-xs font-bold uppercase tracking-widest text-[#666666]">
                         Distributor Benefits:
-                      </h4>
+                      </h3>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {distributorBenefits.map((b) => {
@@ -279,16 +279,16 @@ export default function ContactSection() {
                   {/* Right Column: Distributor Application Form */}
                   <div className="lg:col-span-5 bg-[#FCFAF7] p-6 rounded-2xl border border-[#EAE6E2] space-y-4 relative z-10">
                     <div className="space-y-1">
-                      <h4 className="text-base font-bold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
+                      <h3 className="text-base font-bold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
                         Apply For Distributorship
-                      </h4>
-                      <p className="text-xs text-[#888888]">Fill out the details to request regional distribution rights.</p>
+                      </h3>
+                      <p className="text-xs text-[#666666]">Fill out the details to request regional distribution rights.</p>
                     </div>
 
                     {distSubmitted ? (
                       <div className="p-4 rounded-2xl bg-[#D9F4FF]/50 border border-[#A86B2D]/30 text-xs font-semibold text-[#713411] space-y-1">
                         <div className="flex items-center gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-[#A86B2D]" />
+                          <CheckCircle2 className="w-5 h-5 text-[#8C5925]" />
                           <span className="font-bold">Application Submitted!</span>
                         </div>
                         <p className="text-[11px] text-[#555555]">Our regional manager will call you shortly to discuss distribution terms.</p>
@@ -361,7 +361,7 @@ export default function ContactSection() {
         </div>
 
         {/* Bottom Switcher Navigation Dots */}
-        <div className="flex items-center justify-center gap-3 pt-2 text-xs text-[#888888]">
+        <div className="flex items-center justify-center gap-3 pt-2 text-xs text-[#666666]">
           <button
             onClick={() => setActiveTab('collaboration')}
             className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${

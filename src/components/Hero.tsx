@@ -94,7 +94,7 @@ export default function Hero() {
         >
           {/* Sub-brand Credit */}
           <div className="space-y-1">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#A86B2D] flex items-center gap-1.5 font-['Metropolis','Montserrat',sans-serif]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8C5925] flex items-center gap-1.5 font-['Metropolis','Montserrat',sans-serif]">
               <Building2 className="w-3.5 h-3.5" />
               A Brand by Sindhu Beverages
             </span>
@@ -109,13 +109,13 @@ export default function Hero() {
               <img src="/RiverStone® Black.png" alt="RiverStone®" className="h-12 sm:h-16 lg:h-20 w-auto inline-block align-baseline mb-1 object-contain" /> <br />
               <span className="text-[#713411]"><FluidText text="Packaged" /></span> <br />
               <span className="text-[#713411]"><FluidText text="Drinking" /></span> <br />
-              <span className="text-[#A86B2D]"><FluidText text="Water" /></span>
+              <span className="text-[#8C5925]"><FluidText text="Water" /></span>
             </h1>
           </div>
 
           {/* Social / Contact Connect Bar */}
           <div className="pt-6 hidden sm:flex items-center gap-4">
-            <span className="text-xs font-semibold text-[#888888] uppercase tracking-widest">Connect</span>
+            <span className="text-xs font-semibold text-[#666666] uppercase tracking-widest">Connect</span>
             <div className="flex items-center gap-3">
               <Link
                 to="/contact"
@@ -171,7 +171,7 @@ export default function Hero() {
 
           {/* Main Sub-headline */}
           <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#888888]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#666666]">
               Premium Packaged Drinking Water
             </span>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.12] font-['Metropolis','Montserrat',sans-serif]">

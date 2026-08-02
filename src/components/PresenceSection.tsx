@@ -48,7 +48,7 @@ export default function PresenceSection() {
             className="hidden lg:flex lg:col-span-7 flex-col justify-center space-y-6 text-left"
           >
             {/* Tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#A86B2D] shadow-xs w-fit">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#8C5925] shadow-xs w-fit">
               <Globe className="w-3.5 h-3.5" />
               <span>Maharashtra & Beyond</span>
             </div>
@@ -66,7 +66,7 @@ export default function PresenceSection() {
 
             {/* Active Cities Pills Grid */}
             <div className="space-y-3 pt-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#888888]">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#666666]">
                 Currently Available In:
               </span>
 
@@ -80,7 +80,7 @@ export default function PresenceSection() {
                       }`}
                   >
                     <div className="flex items-center justify-between">
-                      <MapPin className={`w-4 h-4 ${city.isHQ ? 'text-[#D9F4FF]' : 'text-[#A86B2D]'}`} />
+                      <MapPin className={`w-4 h-4 ${city.isHQ ? 'text-[#D9F4FF]' : 'text-[#8C5925]'}`} />
                       {city.isHQ && (
                         <span className="text-[10px] font-extrabold uppercase bg-white/20 px-2 py-0.5 rounded-full text-white">
                           HQ
@@ -88,10 +88,10 @@ export default function PresenceSection() {
                       )}
                     </div>
                     <div className="mt-2">
-                      <h4 className="text-sm font-bold font-['Metropolis','Montserrat',sans-serif]">
+                      <h3 className="text-sm font-bold font-['Metropolis','Montserrat',sans-serif]">
                         {city.name}
-                      </h4>
-                      <p className={`text-[11px] ${city.isHQ ? 'text-white/80' : 'text-[#888888]'}`}>
+                      </h3>
+                      <p className={`text-[11px] ${city.isHQ ? 'text-white/80' : 'text-[#666666]'}`}>
                         {city.isHQ ? 'HeadQuarter' : 'Distribution Network'}
                       </p>
                     </div>
@@ -102,7 +102,7 @@ export default function PresenceSection() {
 
             {/* Expansion Teaser Note */}
             <div className="p-3.5 rounded-2xl bg-white border border-[#EAE6E2] inline-flex items-center gap-2.5 text-xs font-semibold text-[#713411] w-fit shadow-xs">
-              <Sparkles className="w-4 h-4 text-[#A86B2D] animate-spin" style={{ animationDuration: '6s' }} />
+              <Sparkles className="w-4 h-4 text-[#8C5925] animate-spin" style={{ animationDuration: '6s' }} />
               <span>And wait…. we are coming to your city too!</span>
             </div>
 
@@ -134,7 +134,7 @@ export default function PresenceSection() {
 
               {/* Top Header */}
               <div className="w-full flex items-center justify-center relative z-10 border-b border-[#EAE6E2] pb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#A86B2D] flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#8C5925] flex items-center gap-1.5">
                   <Compass className="w-3.5 h-3.5" />
                   Maharashtra and beyond
                 </span>
@@ -153,17 +153,17 @@ export default function PresenceSection() {
               <div className="w-full pt-4 relative z-10 border-t border-[#EAE6E2]">
                 <div className="p-3.5 rounded-2xl bg-[#FCFAF7] border border-[#EAE6E2] flex items-center justify-between text-xs text-[#713411] font-semibold">
                   <span className="flex items-center gap-1.5">
-                    <Building2 className="w-3.5 h-3.5 text-[#A86B2D]" />
+                    <Building2 className="w-3.5 h-3.5 text-[#8C5925]" />
                     Nagpur HQ Hub
                   </span>
-                  <span className="text-[#A86B2D]">Expanding Network</span>
+                  <span className="text-[#8C5925]">Expanding Network</span>
                 </div>
               </div>
             </div>
             {/* Mobile-only Expansion Teaser Note below the map card */}
             <div className="mt-6 flex lg:hidden justify-center w-full">
               <div className="p-3.5 rounded-2xl bg-white border border-[#EAE6E2] inline-flex items-center gap-2.5 text-xs font-semibold text-[#713411] shadow-xs">
-                <Sparkles className="w-4 h-4 text-[#A86B2D] animate-spin" style={{ animationDuration: '6s' }} />
+                <Sparkles className="w-4 h-4 text-[#8C5925] animate-spin" style={{ animationDuration: '6s' }} />
                 <span>And wait…. we are coming to your city too!</span>
               </div>
             </div>
