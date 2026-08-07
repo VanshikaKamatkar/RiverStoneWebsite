@@ -25,7 +25,7 @@ export default function HomePage() {
   }, [location]);
 
   return (
-    <main className="flex-1 space-y-4">
+    <main className="flex-1">
       <Hero />
       <AboutSection />
       <FounderSection />

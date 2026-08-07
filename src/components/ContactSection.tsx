@@ -59,7 +59,7 @@ export default function ContactSection() {
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#A86B2D]/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-12 sm:space-y-16">
-        
+
         {/* Top Section Header with Direct Switcher Tabs */}
         <div id="become-distributor" className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#EAE6E2] pb-8">
           <div className="space-y-2 text-left">
@@ -76,21 +76,19 @@ export default function ContactSection() {
           <div className="flex items-center gap-2 bg-[#F5F3F1] p-1.5 rounded-2xl border border-[#EAE6E2] self-start md:self-auto shadow-xs">
             <button
               onClick={() => setActiveTab('collaboration')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                activeTab === 'collaboration'
-                  ? 'bg-[#713411] text-white shadow-md shadow-[#713411]/20 scale-105'
-                  : 'text-[#666666] hover:text-[#713411]'
-              }`}
+              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === 'collaboration'
+                ? 'bg-[#713411] text-white shadow-md shadow-[#713411]/20 scale-105'
+                : 'text-[#666666] hover:text-[#713411]'
+                }`}
             >
               Collaboration
             </button>
             <button
               onClick={() => setActiveTab('distributor')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                activeTab === 'distributor'
-                  ? 'bg-[#713411] text-white shadow-md shadow-[#713411]/20 scale-105'
-                  : 'text-[#666666] hover:text-[#713411]'
-              }`}
+              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === 'distributor'
+                ? 'bg-[#713411] text-white shadow-md shadow-[#713411]/20 scale-105'
+                : 'text-[#666666] hover:text-[#713411]'
+                }`}
             >
               Become a Distributor
             </button>
@@ -99,7 +97,7 @@ export default function ContactSection() {
 
         {/* Dynamic Card Workspace (Matching Products Card Design) */}
         <div className="relative min-h-[500px] flex items-center justify-center">
-          
+
           {/* Left Navigation Arrow */}
           <button
             onClick={() => setActiveTab((prev) => (prev === 'collaboration' ? 'distributor' : 'collaboration'))}
@@ -131,7 +129,7 @@ export default function ContactSection() {
               >
                 {/* COLLABORATION CARD */}
                 <div className="bg-white rounded-[32px] border-2 border-[#EAE6E2] p-8 sm:p-12 shadow-xl shadow-[#713411]/5 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden text-left">
-                  
+
                   {/* Soft Corner Glow */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#D9F4FF]/80 rounded-bl-full pointer-events-none -z-0" />
 
@@ -231,7 +229,7 @@ export default function ContactSection() {
               >
                 {/* BECOME A DISTRIBUTOR CARD */}
                 <div className="bg-white rounded-[32px] border-2 border-[#EAE6E2] p-8 sm:p-12 shadow-xl shadow-[#713411]/5 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden text-left">
-                  
+
                   {/* Soft Corner Glow */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#A86B2D]/10 rounded-bl-full pointer-events-none -z-0" />
 
@@ -247,7 +245,7 @@ export default function ContactSection() {
                     </div>
 
                     <p className="text-sm text-[#555555] leading-relaxed">
-                      Join our expanding distribution network and become part of a brand committed to quality, reliability, and long-term growth. We offer dedicated support, consistent supply, and a partnership-focused approach to help you build a successful business.
+                      Join our expanding distribution network and become part of a brand committed to quality, reliability, and long-term growth.
                     </p>
 
                     {/* Benefits Grid */}
@@ -262,13 +260,10 @@ export default function ContactSection() {
                           return (
                             <div
                               key={b.title}
-                              className="p-3 rounded-xl bg-[#FCFAF7] border border-[#EAE6E2] shadow-xs flex items-start gap-2.5"
+                              className="p-3 rounded-xl bg-[#FCFAF7] border border-[#EAE6E2] shadow-xs flex items-center gap-2.5"
                             >
-                              <IconC className="w-4 h-4 text-[#713411] shrink-0 mt-0.5" />
-                              <div>
-                                <h5 className="text-xs font-bold text-[#111111]">{b.title}</h5>
-                                <p className="text-[11px] text-[#666666] leading-snug">{b.desc}</p>
-                              </div>
+                              <IconC className="w-4 h-4 text-[#713411] shrink-0" />
+                              <h5 className="text-xs font-bold text-[#111111]">{b.title}</h5>
                             </div>
                           );
                         })}
@@ -364,16 +359,14 @@ export default function ContactSection() {
         <div className="flex items-center justify-center gap-3 pt-2 text-xs text-[#666666]">
           <button
             onClick={() => setActiveTab('collaboration')}
-            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-              activeTab === 'collaboration' ? 'w-8 bg-[#713411]' : 'w-2.5 bg-[#EAE6E2] hover:bg-[#A86B2D]'
-            }`}
+            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeTab === 'collaboration' ? 'w-8 bg-[#713411]' : 'w-2.5 bg-[#EAE6E2] hover:bg-[#A86B2D]'
+              }`}
             aria-label="Go to Collaboration"
           />
           <button
             onClick={() => setActiveTab('distributor')}
-            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-              activeTab === 'distributor' ? 'w-8 bg-[#713411]' : 'w-2.5 bg-[#EAE6E2] hover:bg-[#A86B2D]'
-            }`}
+            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeTab === 'distributor' ? 'w-8 bg-[#713411]' : 'w-2.5 bg-[#EAE6E2] hover:bg-[#A86B2D]'
+              }`}
             aria-label="Go to Distributor"
           />
         </div>

@@ -104,7 +104,7 @@ export default function ProductsSection() {
   return (
     <section
       id="products"
-      className="py-20 md:py-28 bg-[#F5F3F1] border-b border-[#EAE6E2] relative overflow-hidden"
+      className="pt-10 md:pt-12 pb-8 md:pb-12 bg-[#F5F3F1] border-b border-[#EAE6E2] relative overflow-hidden"
     >
       {/* Ambient Soft Glow Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-[#D9F4FF]/70 via-[#FCFAF7] to-transparent blur-3xl -z-10 pointer-events-none" />
