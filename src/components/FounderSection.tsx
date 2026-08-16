@@ -39,7 +39,7 @@ export default function FounderSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F3F1] border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#8C5925] shadow-xs w-fit">
               <Calendar className="w-3.5 h-3.5" />
-              <span>Est. 2023 • Sindhu Beverages</span>
+              <span>Estd. 2023 • Sindhu Beverages</span>
             </div>
 
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.18] font-['Metropolis','Montserrat',sans-serif]">
@@ -59,18 +59,7 @@ export default function FounderSection() {
               Today, RiverStone® continues to expand its footprint while staying true to the values on which it was built: <span className="text-[#111111] font-semibold">trust, consistency, and responsibility</span>.
             </p>
 
-            {/* Gold Left-Bordered Quote Box */}
-            <div className="pt-2">
-              <div className="border-l-4 border-[#A86B2D] bg-[#F5F3F1] p-5 sm:p-6 rounded-r-2xl border-y border-r border-[#EAE6E2] space-y-2 shadow-xs relative">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#713411]">
-                  <Quote className="w-4 h-4 text-[#8C5925]" />
-                  <span>Founder's Philosophy</span>
-                </div>
-                <p className="text-base sm:text-lg font-bold text-[#111111] italic font-['Metropolis','Montserrat',sans-serif]">
-                  <FluidText text="“Trust isn’t advertised." /> <FluidText text="It’s proven in every drop.”" />
-                </p>
-              </div>
-            </div>
+
           </motion.div>
 
           {/* Right Column: Founder's Image Placeholder */}

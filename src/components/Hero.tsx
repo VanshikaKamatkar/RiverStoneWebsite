@@ -23,7 +23,7 @@ export default function Hero() {
   }, [isVideoEnded]);
 
   return (
-    <section id="home" className="relative pt-28 pb-0 md:pt-36 lg:max-w-7xl lg:mx-auto w-full min-h-[100svh] flex flex-col justify-center overflow-hidden">
+    <section id="home" className="relative pt-28 pb-0 md:pt-36 lg:max-w-[1440px] lg:px-10 lg:mx-auto w-full min-h-[100svh] flex flex-col justify-center overflow-hidden">
 
       {/* Soft Ambient Background Lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gradient-to-tr from-[#D9F4FF]/70 via-[#FCFAF7] to-[#A86B2D]/15 rounded-full blur-3xl pointer-events-none z-0" />
@@ -77,7 +77,7 @@ export default function Hero() {
             hidden lg:block
             w-full h-auto max-h-[104vh]
             object-contain object-bottom
-            scale-123
+            scale-118
             drop-shadow-[0_25px_50px_rgba(113,52,17,0.16)]"
         />
       </motion.div>
@@ -95,18 +95,15 @@ export default function Hero() {
           {/* Sub-brand Credit */}
           <div className="space-y-1">
             <span className="text-xs font-bold uppercase tracking-widest text-[#8C5925] flex items-center gap-1.5 font-['Metropolis','Montserrat',sans-serif]">
-              <Building2 className="w-3.5 h-3.5" />
+
               A Brand by Sindhu Beverages
             </span>
           </div>
 
           {/* Main Title Stack */}
           <div className="space-y-1">
-            <h2 className="text-xs sm:text-sm font-bold text-[#713411] uppercase tracking-wider">
-              <FluidText text="Premium Packaged Hydration" />
-            </h2>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#111111] tracking-tight leading-[1.05] font-['Metropolis','Montserrat',sans-serif]">
-              <img src="/RiverStone® Black.png" alt="RiverStone®" className="h-12 sm:h-16 lg:h-20 w-auto inline-block align-baseline mb-1 object-contain" /> <br />
+              <span className="text-[#111111]"><FluidText text="Premium" textColor="#111111" /></span> <br />
               <span className="text-[#713411]"><FluidText text="Packaged" /></span> <br />
               <span className="text-[#713411]"><FluidText text="Drinking" /></span> <br />
               <span className="text-[#8C5925]"><FluidText text="Water" /></span>
@@ -159,21 +156,8 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: showHeroContent ? 0.15 : 0, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-4 flex flex-col justify-center space-y-6 text-left bg-white/40 backdrop-blur-xs lg:bg-transparent lg:backdrop-blur-none p-6 lg:p-0 rounded-none lg:rounded-3xl min-h-[100svh] lg:min-h-0 -mt-[128px] pt-[128px] lg:-mt-0 lg:pt-0"
         >
-          {/* Screenshot Match Pill Badge */}
-          <div>
-            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-md border border-[#EAE6E2] shadow-xs hover:border-[#A86B2D]/40 transition-all duration-300">
-              <Sparkles className="w-4 h-4 text-[#713411]" />
-              <span className="text-xs sm:text-sm font-semibold text-[#713411] tracking-wide font-['Metropolis','Montserrat',sans-serif]">
-                Purity • Precision • Quality
-              </span>
-            </div>
-          </div>
-
           {/* Main Sub-headline */}
           <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#666666]">
-              Premium Packaged Drinking Water
-            </span>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] tracking-tight leading-[1.12] font-['Metropolis','Montserrat',sans-serif]">
               <FluidText text="Not All Water" /> <br />
               <span className="text-[#713411]"><FluidText text="Is Made For Everyone." /></span>

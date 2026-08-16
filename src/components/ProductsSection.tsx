@@ -20,7 +20,7 @@ export default function ProductsSection() {
   const products = [
     {
       id: '200ml',
-      name: 'RiverStone® 200 ml',
+      name: 'Shell - 200 ml',
       tagline: 'Compact and convenient.',
       volume: '200 ml',
       imageScale: 'scale-90',
@@ -36,7 +36,7 @@ export default function ProductsSection() {
     },
     {
       id: '500ml',
-      name: 'RiverStone® 500 ml',
+      name: 'Pebble - 500 ml',
       tagline: 'The everyday essential.',
       volume: '500 ml',
       imageScale: 'scale-105',
@@ -52,7 +52,7 @@ export default function ProductsSection() {
     },
     {
       id: '1000ml',
-      name: 'RiverStone® 1000 ml',
+      name: 'Rock - 1000 ml',
       tagline: 'Built for longer journeys.',
       volume: '1000 ml',
       imageScale: 'scale-115',
@@ -109,10 +109,10 @@ export default function ProductsSection() {
       {/* Ambient Soft Glow Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-[#D9F4FF]/70 via-[#FCFAF7] to-transparent blur-3xl -z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-12 sm:space-y-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-6 sm:space-y-8">
 
         {/* Top Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#EAE6E2] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#EAE6E2] pb-4">
           <div className="space-y-2 text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE6E2] text-xs font-bold uppercase tracking-widest text-[#8C5925] shadow-xs">
               <Droplets className="w-3.5 h-3.5" />
@@ -176,14 +176,14 @@ export default function ProductsSection() {
               transition={{ duration: 0.45, ease: 'easeInOut' }}
               className="w-full max-w-5xl mx-auto px-6 sm:px-12 py-4"
             >
-              <div className="bg-white rounded-[32px] border-2 border-[#EAE6E2] p-8 sm:p-12 shadow-xl shadow-[#713411]/5 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden">
+              <div className="bg-white rounded-[32px] border-2 border-[#EAE6E2] p-6 sm:p-8 shadow-xl shadow-[#713411]/5 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center relative overflow-hidden">
 
                 {/* Soft Water Crystal Corner Lighting */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#D9F4FF]/80 rounded-bl-full pointer-events-none -z-0" />
 
                 {/* Left Side: Official Bottle Visual */}
-                <div className="lg:col-span-5 flex flex-col items-center justify-center relative py-6">
-                  <div className="relative w-48 sm:w-56 h-72 sm:h-80 flex items-center justify-center">
+                <div className="lg:col-span-5 flex flex-col items-center justify-center relative py-4">
+                  <div className="relative w-40 sm:w-48 h-64 sm:h-72 flex items-center justify-center">
                     {/* Aura Halo behind official bottle */}
                     <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#D9F4FF] via-[#A86B2D]/20 to-transparent blur-2xl animate-aura -z-10" />
 
@@ -205,9 +205,6 @@ export default function ProductsSection() {
                 {/* Right Side: Product Details */}
                 <div className="lg:col-span-7 space-y-4 text-left relative z-10">
                   <div className="space-y-2">
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#8C5925]">
-                      Variant Capacity • {currentProduct.volume}
-                    </span>
                     <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111111] font-['Metropolis','Montserrat',sans-serif]">
                       {currentProduct.name}
                     </h3>
@@ -230,20 +227,7 @@ export default function ProductsSection() {
                       {currentProduct.description}
                     </p>
 
-                    <div className="space-y-3 pt-2 border-t border-[#EAE6E2]">
-                      <h3 className="text-xs font-bold uppercase tracking-widest text-[#666666]">Perfect For:</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        {currentProduct.useCases.map((useCase) => (
-                          <div
-                            key={useCase}
-                            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#FCFAF7] border border-[#EAE6E2] shadow-xs text-xs font-semibold text-[#111111]"
-                          >
-                            <CheckCircle2 className="w-4 h-4 text-[#713411] shrink-0" />
-                            <span>{useCase}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+
 
                     <div className="pt-4 flex items-center gap-4">
                       <button
@@ -262,34 +246,7 @@ export default function ProductsSection() {
           </AnimatePresence>
         </div>
 
-        {/* Bottom Controls & Auto-play Indicator */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#EAE6E2] text-xs text-[#666666]">
 
-          {/* Carousel Pagination Indicator Dots */}
-          <div className="flex items-center gap-2">
-            {products.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  setDirection(idx > activeSlide ? 1 : -1);
-                  setActiveSlide(idx);
-                }}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeSlide === idx ? 'w-8 bg-[#713411]' : 'w-2.5 bg-[#EAE6E2] hover:bg-[#A86B2D]'
-                  }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Direct Catalogue Button */}
-          <button
-            onClick={() => setCatalogueModalOpen(true)}
-            className="text-[#713411] font-semibold hover:text-[#8C5925] flex items-center gap-1.5 transition-colors cursor-pointer"
-          >
-            <span>Download Full Catalogue (PDF / Drive)</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </button>
-        </div>
 
       </div>
 
@@ -338,9 +295,6 @@ export default function ProductsSection() {
                   <p className="text-sm font-bold text-[#713411] italic mt-1">
                     "{currentProduct.tagline}"
                   </p>
-                  <span className="text-xs text-[#666666] font-semibold mt-1 block">
-                    Variant Capacity • {currentProduct.volume}
-                  </span>
                 </div>
                 {/* Close button */}
                 <button
@@ -358,20 +312,7 @@ export default function ProductsSection() {
                   {currentProduct.description}
                 </p>
 
-                <div className="space-y-3 border-t border-[#EAE6E2] pt-5">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#666666]">Perfect For:</h3>
-                  <div className="grid grid-cols-1 gap-2.5">
-                    {currentProduct.useCases.map((useCase) => (
-                      <div
-                        key={useCase}
-                        className="flex items-center gap-3 p-3 rounded-xl bg-[#FCFAF7] border border-[#EAE6E2] text-xs font-semibold text-[#111111]"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-[#713411] shrink-0" />
-                        <span>{useCase}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
 
                 <div className="pt-2 pb-4 flex flex-col gap-3">
                   <button
@@ -455,8 +396,8 @@ export default function ProductsSection() {
                     type="submit"
                     className="flex-1 py-3.5 rounded-full bg-[#713411] text-white font-semibold text-xs hover:bg-[#A86B2D] transition-colors cursor-pointer shadow-md shadow-[#713411]/20 flex items-center justify-center gap-2"
                   >
-                    <span>View Drive Link</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>Download PDF</span>
+                    <Download className="w-3.5 h-3.5" />
                   </button>
                   <button
                     type="button"
