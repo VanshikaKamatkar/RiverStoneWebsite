@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, CheckCircle2, Download, ExternalLink, Sparkles, Droplets } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Download, Sparkles, Droplets } from 'lucide-react';
 import FluidText from './FluidText';
 import FluidImage from './FluidImage';
 

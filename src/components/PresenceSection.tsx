@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Globe, Sparkles, Compass, Building2 } from 'lucide-react';
+import { MapPin, Globe, Sparkles } from 'lucide-react';
 import FluidText from './FluidText';
 import FluidImage from './FluidImage';
 

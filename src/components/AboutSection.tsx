@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, ShieldCheck, Award, Building2, CheckCircle2 } from 'lucide-react';
+import { MapPin, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 import FluidText from './FluidText';
 import FluidImage from './FluidImage';
 

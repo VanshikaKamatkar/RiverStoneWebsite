@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { User, Quote, Calendar, Award, Building2 } from 'lucide-react';
+import { User, Calendar, Award, Building2 } from 'lucide-react';
 import FluidText from './FluidText';
 
 export default function FounderSection() {

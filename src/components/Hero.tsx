@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, Building2, Mail, Phone, Globe, Share2 } from 'lucide-react';
+import { ArrowRight, Mail, Phone, Globe, Share2 } from 'lucide-react';
 import FluidText from './FluidText';
 
 export default function Hero() {
